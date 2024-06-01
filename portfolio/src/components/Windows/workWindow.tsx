@@ -63,7 +63,7 @@ const styles = {
     cursor: "pointer",
     backgroundColor: "#F41A1A",
     color: "white",
-    padding: "5px 20px 5px 20px",
+    padding: "5px 25px 5px 25px",
   },
 };
 

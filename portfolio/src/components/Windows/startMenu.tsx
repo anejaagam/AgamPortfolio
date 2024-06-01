@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {ChevronRightIcon} from '@heroicons/react/24/solid';
 
 import * as Data from '../../data';
-const me = require('../../assets/me.png');
+const me = require('../../assets//misc/Me.jpg');
 const power:string = require('../../assets/windows/powerButton.svg').default;
 const folder: string = require('../../assets/windows/folder.svg').default;
 interface StartMenuProps {
@@ -46,9 +46,9 @@ const StartMenu: React.FC<StartMenuProps> = ({ onClose, onExplorerClick, onFolde
                     </div>
                     <div className="flex flex-wrap items-end">
                     {Data.projects.slice(0, 4).map(project => (
-                        <div key={project.id} className="w-1/4 p-1 cursor-pointer" onClick={() => onFolderClick(project)}>
+                        <div key={project.id} className="w-1/4 p-1 cursor-pointe tracking-tighter truncate line-clamp-3 overflow-hidden text-ellipsis" onClick={() => onFolderClick(project)}>
                             <img src={folder} alt={project.title} className="w-5 h-5 inline-block" />
-                            <p className="inline-block ml-1 text-sm">{project.title}</p>
+                            <p className="inline-block ml-1 text-sm ">{project.title}</p>
                         </div>
                     ))}
                     </div>
@@ -58,11 +58,11 @@ const StartMenu: React.FC<StartMenuProps> = ({ onClose, onExplorerClick, onFolde
                         <h4 className="font-bold text-base">Work Experience</h4>
                         <button className="ml-2 bg-white text-sm py-0.5 px-2 shadow-sm rounded-md flex flex-row items-center mr-5" onClick={()=>{onExplorerClick('workExp')}}>View All<ChevronRightIcon className='w-3 h-3 ml-1' /> </button>
                     </div>
-                    <div className="flex flex-row items-center ">
+                    <div className="flex flex-row items-start ">
                     {Data.experiences.slice(0, 4).map(experience => (
-                        <div key={experience.id} className="w-1/4 p-1 cursor-pointer flex flex-col justify-start items-center h-min" onClick={() => onWorkClick(experience)}>
-                            <img src={experience.appImg} alt={experience.company} className="w-7 h-7 inline-block" />
-                            <p className="inline-block ml-1 text-sm text-center text-wrap">{experience.company}</p>
+                        <div key={experience.id} className="w-1/4 p-1 cursor-pointer flex flex-wrap justify-center items-center" onClick={() => onWorkClick(experience)}>
+                            <img src={experience.appImg} alt={experience.company} className="w-9 aspect-square" />
+                            <p className="text-sm text-center text-ellipsis">{experience.company}</p>
                         </div>
                     ))}
                     </div>
@@ -71,9 +71,9 @@ const StartMenu: React.FC<StartMenuProps> = ({ onClose, onExplorerClick, onFolde
             <div className="basis-1/12 bottom-0 flex flex-col justify-end rounded-b-md">
 
                 <div className="flex flex-row items-center py-2 px-7" style={styles.footer}>
-                    <div className='flex basis-3/4 items-center' onClick={onAboutMeClick}>
-                        <img src={me} alt='me' className="w-10 h-10 m-1" />
-                        <p className="m-1">Agamjot Aneja</p>
+                    <div className='flex basis-3/4 items-center cursor-pointer' onClick={onAboutMeClick}>
+                        <img src={me} alt='me' className="w-10 aspect-square object-cover object-top m-1 rounded-full" />
+                        <p className="m-1 text-sm hover:underline">Agamjot Aneja</p>
                     </div>
                     <div className='flex basis-1/4 justify-end items-end mr-5 cursor-pointer' onClick={handleLogout}>
                         <img src={power} alt='power' className="w-5 h-5 m-1 justify-end" />

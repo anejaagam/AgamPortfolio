@@ -6,34 +6,31 @@ import WindowsExplorer from '../components/Windows/fileExplorer';
 import WorkWindow from '../components/Windows/workWindow';
 import * as Data from '../data';
 import AboutMe from '../components/Windows/aboutMeWindows';
+import Courses from '../components/Windows/courseDesc';
+
 
 const folder: string = require('../assets/windows/folder.svg').default;
 const startmenuLogo = require('../assets/windows/startmenuLogo.png');
 
-interface Project {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    pdfLink: string;
-    githubLink: string;
-    images?: string[];
-}
+
 
 
 const works: Data.Experience[] = Data.experiences;
 
 const projects: Data.Project[] = Data.projects;
 
+
+
 const WindowsSimulation: React.FC = () => {
-    const [activeProject, setActiveProject] = useState<Project | null>(null);
+    const [activeProject, setActiveProject] = useState<Data.Project | null>(null);
     const [startMenuVisible, setStartMenuVisible] = useState<boolean>(false);
     const [activeWork, setActiveWork] = useState<Data.Experience | null>(null);
     const [explorerVisible, setExplorerVisible] = useState<boolean>(false);
     const [aboutMeVisible, setAboutMeVisible] = useState<boolean>(false);
     const [activeTab, setActiveTab] = useState<string>('projects');
+    const [activeCourse, setActiveCourse] = useState<Data.Course | null>(null);
 
-    const handleFolderClick = (project: Project) => {
+    const handleFolderClick = (project: Data.Project) => {
         setStartMenuVisible(false);
         setActiveProject(project);
     };
@@ -83,19 +80,29 @@ const WindowsSimulation: React.FC = () => {
         setAboutMeVisible(false);
     };
 
+    const handleOpenCourse = (course:Data.Course) => {
+        setActiveCourse(course);
+        // Add your logic here
+    }
+    const handleCloseCourse = () => {
+        setActiveCourse(null);
+        // Add your logic here
+    }
+
+
     return (
         <><div className="h-screen bg-cover bg-center windows-simulation grid grid-cols-5 gap-0 overflow-hidden overscroll-contain" onClick={handleClickOutside}>
-            <div className="grid grid-flow-col grid-rows-6 gap-0 mb-10">
+            <div className="grid grid-flow-col grid-rows-5 gap-0 mb-10">
                 {projects.map(project => (
-                    <div key={project.id} className="m-4 cursor-pointer flex flex-wrap" onClick={() => handleFolderClick(project)}>
-                        <img src={folder} alt={project.title} className="w-full h-11 leading-none row-end-3" />
-                        <p className="text-center text-white w-full leading-none">{project.title}</p>
+                    <div key={project.id} className="mr-4 cursor-pointer flex flex-wrap justify-center text-ellipsis tracking-tighter" onClick={() => handleFolderClick(project)}>
+                        <img src={folder} alt={project.title} className="2xl:w-full w-14 leading-none row-end-3" />
+                        <p className="text-center text-white line-clamp-1 text-sm overflow-hidden text-ellipsis">{project.title}</p>
                     </div>
                 ))}
                 {works.map(work => (
-                    <div key={work.id} className="m-4 cursor-pointer flex flex-wrap justify-center" onClick={() => handleAppClick(work)}>
-                        <img src={work.appImg} alt={work.company} className="w-12 h-12 leading-none row-end-3" />
-                        <p className="text-center text-white w-full leading-none">{work.company}</p>
+                    <div key={work.id} className="mr-4 cursor-pointer flex flex-wrap justify-center" onClick={() => handleAppClick(work)}>
+                        <img src={work.appImg} alt={work.company} className="w-14  2xl:w-full  leading-none row-end-3" />
+                        <p className="text-center text-white w-full leading-none ">{work.company}</p>
                     </div>
                 ))}
             </div>
@@ -109,8 +116,9 @@ const WindowsSimulation: React.FC = () => {
                     {/* Add more icons as needed */}
                 </div>
             </div>
-            {explorerVisible && <WindowsExplorer onClose={handleCloseExplorer} onFolderClick={handleFolderClick} startTab={activeTab}/>}
+            {explorerVisible && <WindowsExplorer onClose={handleCloseExplorer} onFolderClick={handleFolderClick} startTab={activeTab} onWorkClick={handleAppClick} onCourseClick={handleOpenCourse}/>}
             {activeProject && <ProjectWindow project={activeProject} onClose={handleCloseWindow} />}
+            {activeCourse && <Courses course={activeCourse} onClose={handleCloseCourse} />}
             {aboutMeVisible && <AboutMe onClose={handleCloseAboutMe} />}
             {activeWork && <WorkWindow experience={activeWork} onClose={handleWorkClose} />}
         </div>
