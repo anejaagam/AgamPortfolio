@@ -11,6 +11,7 @@ import Courses from '../components/Windows/courseDesc';
 
 const folder: string = require('../assets/windows/folder.svg').default;
 const startmenuLogo = require('../assets/windows/startmenuLogo.png');
+const fileExplorerLogo = require('../assets/windows/Windows_Explorer.svg').default;
 
 
 
@@ -109,6 +110,9 @@ const WindowsSimulation: React.FC = () => {
             <div className="fixed bottom-0 items-center flex flex-wrap bg-slate-100 h-12 col-span-11 w-full place-content-center">
                 <div onClick={handleStartMenuClick}>
                     <img src={String(startmenuLogo)} alt="Start" className="w-6 h-6" />
+                </div>
+                <div onClick={()=>{handleExplorerClick('projects')}} className='ml-4'>
+                    <img src={String(fileExplorerLogo)} alt="Explorer" className="w-6 h-6" />
                 </div>
                 <div className="flex mx-4">
                     <img src="/path/to/software-icon1.svg" alt="Software 1" className="w-6 h-6" />

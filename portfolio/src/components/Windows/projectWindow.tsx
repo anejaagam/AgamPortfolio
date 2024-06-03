@@ -1,5 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
-import CarouselMe from "../carousel";
 import * as Data from '../../data';
 
 interface ProjectWindowProps {
@@ -20,6 +20,7 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
             // </div>
           }
           <h2 className="text-xl">{project.title}</h2>
+
           <button
             className="absolute top-0 right-0 justify-center"
             onClick={onClose}
@@ -28,11 +29,23 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
             x
           </button>
         </div>
-        <div className="px-4 overflow-y-scroll flex flex-col no-scrollbar">
+        <div className="px-4 overflow-y-scroll flex flex-col">
           <div className="flex space-x-4 p-4 sticky top-0 bg-white">
             <div>
-              <h3 className="text-lg mb-2">Description</h3>
+              <div className="flex flex-row justify-between">
+                <h3 className="text-lg mb-2">Description</h3>
+                <a
+                  href={project.pdfLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500"
+                  type="application/pdf"
+                >
+                  View PDF
+                </a></div>
+
               <p className="mb-4">{project.description}</p>
+
             </div>
           </div>
           <div className="p-4 flex flex-none flex-col">
@@ -47,7 +60,7 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
                 <li key={index}>- {task}</li>
               ))}
             </ul>
-            
+
             <h3 className="text-lg font-bold mt-4">Challenges Faced</h3>
             <p>{project.challengesFaced}</p>
             <h3 className="text-lg font-bold mt-4">Solutions and Innovations</h3>
@@ -62,31 +75,31 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
             {project.technologiesTools.tools.length > 0 && <p><strong>Tools:</strong> {project.technologiesTools.tools.join(', ')}</p>}
           </div>
           <div className="flex space-x-4">
-                <a
-                  href={project.pdfLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500"
-                >
-                  View PDF
-                </a>
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500"
-                >
-                  View on GitHub
-                </a>
-              </div>
-          {project.images && (
-            <div className="mt-4">
-              <h3 className="text-lg mb-2">More Images</h3>
-              <div className="flex space-x-4">
-                <CarouselMe images={project.images} />
+            {/*<a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500"
+            >
+                View on GitHub
+              </a>*/
+            }
+
+          </div>
+
+          {project.images.length > 0 && (
+            <div className="mt-4 p-4">
+              <h3 className="text-lg font-bold mb-2">Project Images</h3>
+              <div className="flex space-x-4 ">
+                <div className="flex space-x-4 snap-x overflow-x-scroll">
+                  {project.images?.map((image, index) => (
+                    <img key={index} src={image} alt={`Image ${index}`} className="w-full snap-center object-contain" />
+                  ))}
+                </div>
               </div>
             </div>
           )}
+
         </div>
       </div>
     </div>

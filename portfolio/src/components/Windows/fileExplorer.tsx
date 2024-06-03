@@ -50,20 +50,20 @@ const WindowsExplorer: React.FC<WindowsExplorerProps> = ({ onClose, onFolderClic
                     <button className="text-xl text-red-500" onClick={onClose} style={styles.closeButton}>x</button>
                 </div>
                 <div className="flex relative h-full  mb-4">
-                    <div className=" w-1/5 bg-slate-50 bg-opacity-70 backdrop-blur-2xl p-4">
-                        <div className="mb-4 cursor-pointer" onClick={() => setActiveTab('projects')}>
+                    <div className=" w-1/5 bg-slate-50 bg-opacity-70 backdrop-blur-2xl py-4 pl-4">
+                        <div className="mb-4 cursor-pointer" onClick={() => setActiveTab('projects')} style={activeTab === 'projects' ? styles.active : styles.inactive}>
                             <img src={folderIcon} alt="Projects" className="w-6 h-6 inline-block" />
                             <p className="inline-block ml-2">Projects</p>
                         </div>
-                        <div className="mb-4 cursor-pointer" onClick={() => setActiveTab('technologies')}>
+                        <div className="mb-4 cursor-pointer" onClick={() => setActiveTab('technologies')} style={activeTab === 'technologies' ? styles.active : styles.inactive}>
                             <img src={folderIcon} alt="Technologies" className="w-6 h-6 inline-block" />
                             <p className="inline-block ml-2">Technologies</p>
                         </div>
-                        <div className="mb-4 cursor-pointer" onClick={() => setActiveTab('workExp')}>
+                        <div className="mb-4 cursor-pointer" onClick={() => setActiveTab('workExp')} style={activeTab === 'workExp' ? styles.active : styles.inactive}>
                             <img src={folderIcon} alt="Work Experience" className="w-6 h-6 inline-block" />
                             <p className="inline-block ml-2">Work Experience</p>
                         </div>
-                        <div className="cursor-pointer" onClick={() => setActiveTab('courses')}>
+                        <div className="cursor-pointer" onClick={() => setActiveTab('courses')} style={activeTab === 'courses' ? styles.active : styles.inactive}>
                             <img src={folderIcon} alt="courses" className="w-6 h-6 inline-block" />
                             <p className="inline-block ml-2">Courses</p>
                         </div>
@@ -92,7 +92,7 @@ const WindowsExplorer: React.FC<WindowsExplorerProps> = ({ onClose, onFolderClic
                                                 </div>
                                             </td>
                                             <td className="py-2 px-4">
-                                                {activeTab === 'projects' ? item.description : activeTab === 'workExp' ? item.role : ''}
+                                                {activeTab === 'projects' ? item.description : activeTab === 'workExp' ? item.title : ''}
                                             </td>
                                         </tr>
                                     ))}
@@ -114,6 +114,16 @@ const styles = {
         color: "white",
         padding: "5px 25px 5px 25px",
     },
+
+    active: {
+        backgroundColor: "grey",
+        padding: '10px',
+        borderRadius: '10px 0px 0px 10px',
+        background: 'rgba(196, 196, 196, 0.4)',
+    },
+    inactive: {
+
+    }
 };
 
 
