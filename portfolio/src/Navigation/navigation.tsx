@@ -11,7 +11,7 @@ import DeviceRedirect from './DeviceRedirect';
 
 const Navigation: React.FC = () => {
     return (
-        <Router>
+        <Router  basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<BootScreen />} />
                 <Route path="/windows" element={
