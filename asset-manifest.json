@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c75d0e32.css",
-    "main.js": "/static/js/main.5a3c8272.js",
+    "main.css": "/static/css/main.3b8aeeec.css",
+    "main.js": "/static/js/main.14b12682.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
     "static/media/ENGR 406 - Final Project Report.pdf": "/static/media/ENGR 406 - Final Project Report.8b617e40bf6296e74749.pdf",
     "static/media/Report.pdf": "/static/media/Report.43e432be07aea52123d3.pdf",
@@ -13,6 +13,7 @@
     "static/media/ENGR 499_ Final Design Report.pdf": "/static/media/ENGR 499_ Final Design Report.130ab9292d875a2f374a.pdf",
     "static/media/Poster.pdf": "/static/media/Poster.28b8b970231f155c9a98.pdf",
     "static/media/Project Report.pdf": "/static/media/Project Report.b5b424962767c1e62481.pdf",
+    "static/media/EngineeringBackground.jpg": "/static/media/EngineeringBackground.9f86ed8d6e911792b3d9.jpg",
     "static/media/Gearbox.JPG": "/static/media/Gearbox.086fea30cd32b7e83495.JPG",
     "static/media/Manf486_Lab3_Report.pdf": "/static/media/Manf486_Lab3_Report.da7d7f555b80659119ac.pdf",
     "static/media/HeatTreatmentProject.pdf": "/static/media/HeatTreatmentProject.05c0804b241cf3b087cf.pdf",
@@ -40,6 +41,7 @@
     "static/media/flextrackhealth.svg": "/static/media/flextrackhealth.a51d3043c30d1ec6e962717051c09e04.svg",
     "static/media/KLayout.png": "/static/media/KLayout.3c1db74afbff5518fb27.png",
     "static/media/Me.jpg": "/static/media/Me.d89e32665546eacf4670.jpg",
+    "static/media/infinityGreen.svg": "/static/media/infinityGreen.b705c4cc925cc0acb2be9b251cbdc96a.svg",
     "static/media/377 Flow Chart.jpg": "/static/media/377 Flow Chart.c50dac3b65a44f068df8.jpg",
     "static/media/circuit.jpg": "/static/media/circuit.bf81287be1a5a9bcc92a.jpg",
     "static/media/Design.jpg": "/static/media/Design.bb84a3f7f3ff15f9e2c0.jpg",
@@ -51,6 +53,7 @@
     "static/media/bootLogo.svg": "/static/media/bootLogo.d27b76d3842469dd4247c9790f5775d9.svg",
     "static/media/PictureFrame.jpg": "/static/media/PictureFrame.63e3b1be3cef277ce3f1.jpg",
     "static/media/aptixxEducation.svg": "/static/media/aptixxEducation.8b6b8f786e6dce3a6be56df9c647c7ec.svg",
+    "static/media/convertcsv.xlsx": "/static/media/convertcsv.05159778adfd82c0a019.xlsx",
     "static/media/Matplotlib.svg": "/static/media/Matplotlib.80c8bebb1dce68dc12580ccab5a9c19d.svg",
     "static/media/Poster1.jpg": "/static/media/Poster1.dbede32d31282aa9cf46.jpg",
     "static/media/Xcode.svg": "/static/media/Xcode.b31073315b4f7b90614ba696ddc34957.svg",
@@ -71,6 +74,7 @@
     "static/media/XML.svg": "/static/media/XML.46d5ed585ee6cca11ee5bb2bf9e95e62.svg",
     "static/media/VSCode.svg": "/static/media/VSCode.ae90970b7990088d824d8e3a11d9024f.svg",
     "static/media/jQuery.svg": "/static/media/jQuery.1f9df0e960ed8649a166c78a1727b2a1.svg",
+    "static/media/MySQL.svg": "/static/media/MySQL.ebf5eeaef302d497971c5bbd898566e4.svg",
     "static/media/FileZilla.svg": "/static/media/FileZilla.0c943071f8158004ffbc5ffe763b13f7.svg",
     "static/media/adobe.svg": "/static/media/adobe.abfa3621ee6bb9d15e9da35c7bfc9329.svg",
     "static/media/IntelliJ-IDEA.svg": "/static/media/IntelliJ-IDEA.af243ab5c3d878601b684223225204db.svg",
@@ -126,12 +130,12 @@
     "static/media/TensorFlow.svg": "/static/media/TensorFlow.d134800405cb87bd8c207af58dff37cd.svg",
     "static/media/CMake.svg": "/static/media/CMake.401f4f5f8e1d4aad874750e5123b36d4.svg",
     "static/media/Nextjs.svg": "/static/media/Nextjs.17fe1720dcc66b60fc1a5a70d104d1dd.svg",
-    "main.c75d0e32.css.map": "/static/css/main.c75d0e32.css.map",
-    "main.5a3c8272.js.map": "/static/js/main.5a3c8272.js.map",
+    "main.3b8aeeec.css.map": "/static/css/main.3b8aeeec.css.map",
+    "main.14b12682.js.map": "/static/js/main.14b12682.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c75d0e32.css",
-    "static/js/main.5a3c8272.js"
+    "static/css/main.3b8aeeec.css",
+    "static/js/main.14b12682.js"
   ]
 }
