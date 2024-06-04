@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {ChevronRightIcon} from '@heroicons/react/24/solid';
 
 import * as Data from '../../data';
+import { randomInt } from 'crypto';
 const me = require('../../assets//misc/Me.jpg');
 const power:string = require('../../assets/windows/powerButton.svg').default;
 const folder: string = require('../../assets/windows/folder.svg').default;
@@ -33,10 +34,13 @@ const StartMenu: React.FC<StartMenuProps> = ({ onClose, onExplorerClick, onFolde
                         <button className="ml-2 mr-5 bg-white text-sm py-0.5 px-2 shadow-sm rounded-md flex flex-row items-center" onClick={()=>{onExplorerClick('technologies')}}>View All<ChevronRightIcon className='w-3 h-3 ml-1' /> </button>
                     </div>
 
-                    <div className="flex flex-wrap">
-                        <img src="/path/to/tech-icon1.svg" alt="Tech 1" className="w-8 h-8 m-1" />
-                        <img src="/path/to/tech-icon2.svg" alt="Tech 2" className="w-8 h-8 m-1" />
-                        {/* Add more icons as needed */}
+                    <div className="flex flex-wrap flex-none items-start">
+                    {Data.technologies.slice(0, 4).map(project => (
+                        <div key={project.id} className="w-1/4 h-full p-1 flex flex-col items-center" >
+                            <img src={project.icon} alt={project.name} className="h-10 w-full" />
+                            <p className="text-sm text-center">{project.name}</p>
+                        </div>
+                    ))}
                     </div>
                 </div>
                 <div className="mb-4">

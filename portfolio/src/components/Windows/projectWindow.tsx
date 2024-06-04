@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import * as Data from '../../data';
+const pdfIcon: string = require('../../assets/misc/pdf.svg').default;
 
 interface ProjectWindowProps {
   project: Data.Project;
@@ -41,7 +42,7 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
                   className="text-blue-500"
                   type="application/pdf"
                 >
-                  View PDF
+                  <img src={pdfIcon} alt="pdf" className="w-7" />
                 </a></div>
 
               <p className="mb-4">{project.description}</p>

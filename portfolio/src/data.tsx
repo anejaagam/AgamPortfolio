@@ -1,4 +1,5 @@
 import * as projectData from "./projectData";
+import * as Data from "./technologiesData";
 export interface Project {
     id: number;
     title: string;
@@ -37,6 +38,7 @@ export interface Course {
 export interface Technology {
     id: number;
     name: string;
+    category: "Software" | "Programming Language" | "Framework" | "Tool" | "Service";
     icon: string;
 }
 
@@ -172,19 +174,7 @@ export const courses: Course[] = [
         impactOnCareer: "This course prepared me for roles in industrial automation and control system engineering."
     }
 ];
-export const technologies: Technology[] = [
-    {
-        id: 1,
-        name: 'Technology 1',
-        icon: '/path/to/tech-icon1.svg'
-    },
-    {
-        id: 2,
-        name: 'Technology 2',
-        icon: '/path/to/tech-icon2.svg'
-    },
-    // Add more technologies as needed
-];
+export const technologies: Technology[] = Data.technologyData;
 
 export const experiences: Experience[] = [
     

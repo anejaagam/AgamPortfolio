@@ -2,7 +2,7 @@ import React from 'react';
 
 const profilePic: string = require('../../assets/misc/Me.jpg');
 const linkedInIcon: string = require('../../assets/misc/linkedin.svg').default;
-const pdfIcon: string = require('../../assets/misc/pdf.svg').default;
+
 const emailIcon: string = require('../../assets/misc/mail.svg').default;
 
 interface AboutMeProps {

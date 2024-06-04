@@ -107,17 +107,22 @@ const WindowsSimulation: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <div className="fixed bottom-0 items-center flex flex-wrap bg-slate-100 h-12 col-span-11 w-full place-content-center">
-                <div onClick={handleStartMenuClick}>
+            <div className="fixed bottom-0  flex flex-wrap bg-slate-100 h-12 col-span-11 w-full place-content-center">
+                
+                <div className="inline-flex gap-4 items-center">
+                <div onClick={handleStartMenuClick} className='cursor-pointer'>
                     <img src={String(startmenuLogo)} alt="Start" className="w-6 h-6" />
                 </div>
-                <div onClick={()=>{handleExplorerClick('projects')}} className='ml-4'>
+                <div onClick={()=>{handleExplorerClick('projects')}} className='cursor-pointer'>
                     <img src={String(fileExplorerLogo)} alt="Explorer" className="w-6 h-6" />
                 </div>
-                <div className="flex mx-4">
-                    <img src="/path/to/software-icon1.svg" alt="Software 1" className="w-6 h-6" />
-                    <img src="/path/to/software-icon2.svg" alt="Software 2" className="w-6 h-6" />
-                    {/* Add more icons as needed */}
+                    <img src={require("../assets/softwareIcons/solidworks.svg").default} alt="SolidWorks" className="w-6 h-6" />
+                    <img src={require("../assets/softwareIcons/MATLAB.svg").default} alt="Matlab" className="w-6 h-6" />
+                    <img src={require("../assets/softwareIcons/RStudio.svg").default} alt="RStudio" className="w-6  h-6" /> 
+                    <img src={require("../assets/softwareIcons/VSCode.svg").default} alt="VSCode" className="w-6 h-6" />
+                    <img src={require("../assets/softwareIcons/TIA17.svg").default} alt="TIA17" className="w-6  h-6" />
+                    <img src={require("../assets/softwareIcons/kicad.png")} alt="KiCAD" className="w-6  h-6" />
+                    <img src={require("../assets/softwareIcons/Excel.svg").default} alt="Excel" className="w-6  h-6" />
                 </div>
             </div>
             {explorerVisible && <WindowsExplorer onClose={handleCloseExplorer} onFolderClick={handleFolderClick} startTab={activeTab} onWorkClick={handleAppClick} onCourseClick={handleOpenCourse}/>}

@@ -7,14 +7,23 @@ import AndroidSimulation from '../screens/AndroidSimulation';
 import WindowsLoadingScreen from '../components/Windows/windowsBoot';
 import MacOSBoot from '../components/MacOS/macBoot';
 import IosSimulator from '../screens/iOSSimulation';
+import DeviceRedirect from './DeviceRedirect';
 
 const Navigation: React.FC = () => {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<BootScreen />} />
-                <Route path="/windows" element={<WindowsSimulation />} />
-                <Route path="/macos" element={<MacOSSimulation />} />
+                <Route path="/windows" element={
+                    <DeviceRedirect>
+                        <WindowsSimulation />
+                    </DeviceRedirect>
+                } />
+                <Route path="/macos" element={
+                    <DeviceRedirect>
+                        <MacOSSimulation />
+                    </DeviceRedirect>
+                } />
                 <Route path="/android" element={<AndroidSimulation />} />
                 <Route path="/ios" element={<IosSimulator />} />
                 <Route path="/windows-boot" element={<WindowsLoadingScreen />} />
